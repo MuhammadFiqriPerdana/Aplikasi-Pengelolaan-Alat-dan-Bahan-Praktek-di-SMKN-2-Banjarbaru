@@ -173,7 +173,7 @@
 
 					<li class="treeview">
 						<a href="#">
-						<i class="fa-solid fa-briefcase"></i>
+						<i class="fa fa-shopping-cart"></i>
 							<span>Transaksi</span>
 							<span class="pull-right-container">
 								<i class="fa fa-angle-left pull-right"></i>

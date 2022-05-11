@@ -1,7 +1,7 @@
 <section class="content-header">
 	<h1>
-		Pemakaian
-		<small>Bahan Habis Pakai</small>
+		Peminjaman
+		<small>Alat</small>
 	</h1>
 	<ol class="breadcrumb">
 		<li>
