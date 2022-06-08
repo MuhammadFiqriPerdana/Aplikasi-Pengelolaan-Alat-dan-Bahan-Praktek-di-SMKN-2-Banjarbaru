@@ -82,8 +82,15 @@
 <?php
 
     if (isset ($_POST['Simpan'])){
-		if(isset($_FILES['foto']['tmp_name'])){
-		$image = addslashes(file_get_contents($_FILES['gambar']['tmp_name']));
+		
+		// $image = addslashes(file_get_contents($_FILES['gambar']['tmp_name']));
+		$dir = "/xampp/htdocs/skripsi/admin/alat/images/";
+		$nama_file = $_FILES['foto']['name'];
+		$nama_file_tmp = $_FILES['foto']['tmp_name'];
+		$dirUpload = "/xampp/htdocs/skripsi/admin/alat/images/";
+		move_uploaded_file($nama_file_tmp, $dir . $nama_file);
+		$query;
+		
 		$jurusan = $_SESSION['jurusan'];
         $sql_simpan = "INSERT INTO tb_barang (kode_barang,nama_barang,stok,anggaran,kondisi,foto,kepemilikan,kategori) VALUES (
            '".$_POST['kode_barang']."',	
@@ -91,12 +98,12 @@
           '".$_POST['stok']."',
           '".$_POST['anggaran']."',
           '".$_POST['kondisi']."',
-          '".$image."',
+          '".$nama_file."',
           '".$jurusan."','Alat')";
 		
         $query_simpan = mysqli_query($koneksi, $sql_simpan);
         mysqli_close($koneksi);
-		}
+		
     if ($query_simpan){
 
       echo "<script>
