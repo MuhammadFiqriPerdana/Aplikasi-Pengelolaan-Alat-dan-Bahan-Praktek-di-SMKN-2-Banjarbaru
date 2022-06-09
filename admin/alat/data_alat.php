@@ -76,8 +76,7 @@
 								<?php echo $data['kondisi']; ?>
 							</td>
 							<td>
-								<!-- <img src="../../dist/img/alat/<?php echo $data['foto']; ?>" width="100" height="100"> -->
-								<?php echo "<img src='../../dist/img/alat/$data[foto]' width='70' height='90' />";?>
+								 <img src="./admin/alat/images/<?php echo $data['foto']; ?>" width="100" height="100"> 
 							</td>
 							<td>
 								<a href="?page=MyApp/edit_alat&kode=<?php echo $data['id_barang']; ?>" title="Ubah"
