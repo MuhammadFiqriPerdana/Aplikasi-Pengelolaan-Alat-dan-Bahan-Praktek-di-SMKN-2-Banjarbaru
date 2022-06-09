@@ -87,7 +87,8 @@
 		$dir = "./admin/alat/images/";
 		$nama_file = $_FILES['foto']['name'];
 		$nama_file_tmp = $_FILES['foto']['tmp_name'];
-		$gantiNama = round(microtime(true));
+		$ext = explode(".", $nama_file);
+		$gantiNama = round(microtime(true)) . "." . end($ext);
 		$dirUpload = "./admin/alat/images/";
 		move_uploaded_file($nama_file_tmp, $dir . $gantiNama);
 		$query;
