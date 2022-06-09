@@ -104,7 +104,8 @@
 						
 								<?php
 								if ($data['foto'] != null){
-								echo '<img class="rounded" height="500" width="500" src="data:image/jpeg;base64,'.base64_encode( $data['foto'] ).'"/>';
+								// echo '<img class="rounded" height="500" width="500" src=".dist/img/ $data['foto'];"/>';
+								echo '<img class="rounded float-right" src="./dist/img/'.$data['foto'].'" ">';
 								} else {
 									echo '<img class="rounded float-right" src="dist/img/avatar.png"/>';
 								}
@@ -258,9 +259,9 @@
 						</a>
 					</li>
 					<li class="treeview">
-						<a href="?page=MyApp/edit_profile ">
+						<a href="?page=MyApp/profil">
 							<i class="fa fa-user"></i>
-							<span>Edit Profile</span>
+							<span>Profile</span>
 							<span class="pull-right-container">
 							</span>
 						</a>
@@ -416,10 +417,14 @@
               case 'MyApp/del_pengguna':
                   include "admin/pengguna/del_pengguna.php";
 				  break;
-              case 'MyApp/edit_profile':
-                  include "admin/pengguna/edit_profile.php";
+              case 'MyApp/profil':
+                  include "admin/profil/data_profil.php";
 				  break;
-				  
+              case 'MyApp/edit_profil':
+                  include "admin/profil/edit_profile.php";
+				  break;
+
+
 
               //siswa
               case 'MyApp/data_siswa':
