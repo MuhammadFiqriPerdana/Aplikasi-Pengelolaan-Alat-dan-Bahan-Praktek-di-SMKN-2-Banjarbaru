@@ -84,11 +84,12 @@
     if (isset ($_POST['Simpan'])){
 		
 		// $image = addslashes(file_get_contents($_FILES['gambar']['tmp_name']));
-		$dir = "/xampp/htdocs/skripsi2/admin/alat/images/";
+		$dir = "./admin/alat/images/";
 		$nama_file = $_FILES['foto']['name'];
 		$nama_file_tmp = $_FILES['foto']['tmp_name'];
-		$dirUpload = "/xampp/htdocs/skripsi2/admin/alat/images/";
-		move_uploaded_file($nama_file_tmp, $dir . $nama_file);
+		$gantiNama = round(microtime(true));
+		$dirUpload = "./admin/alat/images/";
+		move_uploaded_file($nama_file_tmp, $dir . $gantiNama);
 		$query;
 		
 		$jurusan = $_SESSION['jurusan'];
@@ -98,7 +99,7 @@
           '".$_POST['stok']."',
           '".$_POST['anggaran']."',
           '".$_POST['kondisi']."',
-          '".$nama_file."',
+          '".$gantiNama."',
           '".$jurusan."','Alat')";
 		
         $query_simpan = mysqli_query($koneksi, $sql_simpan);
